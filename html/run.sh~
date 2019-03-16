@@ -1,0 +1,3 @@
+cd /home/robot
+python /home/robot/printer3.py 
+echo "" >> /var/www/log.txt

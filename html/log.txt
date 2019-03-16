@@ -1,0 +1,263 @@
+pen up
+✂Click on each button to control the printer(s).
+Once you click on a button, be patient. The command will take a moment. 
+You will be notified once finished (~10 seconds).
+Images to print:
+22182215032019_pi_.png
+132  x  220
+(255, 255, 255, 255)
+                                                                                                                                     0
+                                                                                                                                     1
+                                                                                                                                     2
+                                                                                                                                     3
+                                                                                                      D                              4
+                                                                                                      DDD                            5
+                                                                                                      DDD DD                         6
+                                                                                                     DDDDDDDDD                       7
+                                                                                                     DD  DDDDD                       8
+                                                                                                     DD  DDD DD                      9
+                                                                                                    DD   DD  DDD                     10
+                                                                                                    DD    DD  DD                     11
+                                                                                                   DD     DD  DD                     12
+                                                                                                   DD     DD   D                     13
+                                                                                                  DD      DD   DD                    14
+                                                                                                  DD      DDD  DD                    15
+                                                                                                 DD      DDDD  DD                    16
+                                                                                                 DD      DDD   DD                    17
+                                                                                                 DD      D D  DDD                    18
+                                                                                                DD       DDDD DDD                    19
+                                                                                                DD      D  D  DDD                    20
+                                                                                               DD       D DD  DDD                    21
+                                                                                               DD      DD DD DDDD                    22
+                                                                                               DD      D  DD D D                     23
+                                                                                              DD      DD DD D DD                     24
+                                                                                              DD      D  DD   DD                     25
+                                                                                             DD       D DD  DDD                      26
+                                                                                             DD      D  DD D DD      DDDD            27
+                                                                                             DD      D  DD D DD    DDDDDD            28
+                                                                                            DD       D DD DDDDD  DDDDD DD            29
+                                                                                            DD       D DD D DD  DDD    DD            30
+                                                                                           DD       D  DD D DD DDD     DD            31
+                                                                                           DD      DD DD DDDDDDD       DD            32
+                                                                                           DD      D  DD D DDD         DD            33
+                                                                                          DD       D DDD DDDD          DD            34
+                                                                                          DD      D   D DDDD           DD            35
+                                                                                         DD       D  DDDDD             DD            36
+                                                                                         DD       D  DDDD              D             37
+                                                                                        DD        D DDDD               DD            38
+                                                                                        DD       D  DDD               DDD            39
+                                                                                        DD      D   DD                 DD            40
+                                                                                       DD       DD DDD                DD             41
+                                                                                       DD       D DDD                 DD             42
+                                                                                      DD       D  DD                   D             43
+                                                                                      DD       DDDD                   DD             44
+                                                                                      DD       DDD                    DD             45
+                                                                                     DD       DDDD                    DD             46
+                                                                                     DD       DDD               DD DDDDD             47
+                                                                                    DD       DDD           DDDDDDD DD DD             48
+                                                                                    DD       DDD          D           DD             49
+                                                                                    DD       DDD         DD           DD             50
+                                                                                   DD       DDD         DD            DD             51
+                                                                                   DD       DD          D             DD             52
+                                                                                  DD        DD         DD            DD              53
+                                                                                  DD       DDD         D              D              54
+                                                                                  DD       DD         DD              DD             55
+                                                                                 DD     DDDD          D              DDD             56
+                                                                                 DD DDDDDDDD         DD  DD D        DD              57
+                                                                                DDDDDDDD  DD         DDD DDDDD DDDDDDDD              58
+                                                                                DDDDD    DD          D               DD              59
+                                                                              DDDD       DD         DD               DD              60
+                                                                            DDDDD        DD         D                DD              61
+                                                                           DDD          DD          D                DD              62
+                                                                         DDDD           DD         DD               DD               63
+                                                                        DDD             DD         DD                DD              64
+                                                                      DDDD             DD          D                DD               65
+                                                                      DDD              DD          D        D DDDDDDDD               66
+                                                                    DDD                DD         DDDDDD DDD D  D   DD               67
+                                                                    DD                 D          DD D              DD               68
+                                                                  DDD                 DD          D                 DD               69
+                                                                  DD                  DD          D                DD                70
+                                                                 DD                   DD          D                DD                71
+                                                                DD                   DD           D                DD                72
+                                                                DD                   DD          DD                DD                73
+                                                               DD                    DD          D                DDD                74
+                                                              DD                     DD          DD              DDD                 75
+                                                              DD                     DD          DD          DDDDDDD                 76
+                                                             DDD                    DD            D     DDDDDDD   DD                 77
+                                                             DD                     DD            D  DDDDD        D                  78
+                                                             DD                     DD            DDD D          DD                  79
+                                                            DDDDD                   D                            DD                  80
+                                                            DDDDDDDD                DD                          DDD                  81
+                                                            D  DD  DDD             DD                           DD                   82
+                                                           DD    DD  DD            DD                           DD                   83
+                                                           DD     DDD  DD          DD                           DD                   84
+                                                          DDD       D   DDD        DD                          DD                    85
+                                                           DD        DD   DD       DD                         DD                     86
+                                                           D          DD   DD     DD                          DD                     87
+                                                           DD           DD   D    DD                         DD                      88
+                                                          DD             D   DD    D                        DDD                      89
+                                                          DD              DD  DD  DDD                      DDD                       90
+                                                          DD               DD  DD  DD                     DDD                        91
+                                                          DD                DD  DD  D                   DDDD                         92
+                                                          DD                 D   D  DDD                DDD                           93
+                                                          DD                  D  DD  DDDD            DDDD                            94
+                                                          DD                  DD  D   DDDDD   D  DDDDDD                              95
+                                                          DD                   DD DD     DDDDDDDDDDDD                                96
+                                                          DD                    D  D       D DD D DDD                                97
+                                                          DD                     D DD             DD                                 98
+                                                           D                     D  D            DD                                  99
+                                                          DDD                     D D            DD                                  100
+                                                           D                      D D           DDD                                  101
+                                                           DD                     DDDD          DD                                   102
+                                                           DD                      D D         DD                                    103
+                                                           DD                       DD        DD                                     104
+      D                                                    DD                       DD       DDD                                     105
+      DD                                                    DD                      DDD     DDD                                      106
+      DDD                                                   DD                      DDD    DDD                                       107
+      DDDD           D D DD  DD                             DD                       DD    DD                                        108
+      DDDDD     DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD DD D D D DD                       DD   DD                                         109
+       D  DD  DDDDD       DD   D D D DDDD DD DDDDDDDDDDDDDDDDD                       DD    DD                                        110
+       DD  DD DD           D                            D   DDD                      DD    DD                                        111
+       D   DDDD            D                                 DD                      DD    DD                                        112
+       DD    DDD          DD                                 DD        DDDD           D    DD                                        113
+       DD      DDD         D                                 DD       DD DDDDD       DD    DD                                        114
+       DD        DDDDD     D                                  DD    DD       DD       D     DD                                       115
+        D         DDDDDDDDDDDD D DD D  D                      DD   DD  D      DD     DD     DD                                       116
+        D                DDDDDDDDDDDDDDDDDDDDDDDDD DDDDDDD DD DD  DDDDD DD     D     D      D                                        117
+        D                  D           D  DD D DDDDD DDDDDDDDDD   DDD     D    DD    DD    DD                                        118
+        DD                 D                                 DD   DD      DD    D    D      DD                                       119
+        DD                 D                                  DD  DD       D    D   DD     DD                                        120
+         DD                D                                 DDD  D        D    D    D     DD                                        121
+         DD                DD                                DDD  DD       DD   D    D     DD                                        122
+          D                D                                  DDD DD       D   DD   DD     DD                                        123
+          DD               D                                 DDD   DD     D    D    D     DD                                         124
+           DD              D                                 DDDD  DDD DDDD   DD    D     DD                                         125
+            DD             D                                 DD D   DDD     DDD    DD     DD                                         126
+            DDD           D                                   DDD    DDDDDDDD     DD     DD                                          127
+              DDD        DD                                   D D       D D       DD     DD                                          128
+               DDDD    DDD                                   DD D                DD     DD                                           129
+                 DDDDDDDDDDDDDD D D D                        DD D               DD     DDD                                           130
+                    D  D  DDDDDDDDDDDDDDDDDDD DDD D          DD DDD            DD     DD                                             131
+                                      D DD DDDDDDDDDDDDDDDDDDDD  DDDDDD    D DDD     DDD                                             132
+                                                   D DD  DD DDDD     DDDDDDDDD      DDD                                              133
+                                                               DDDD      D        DDDD                                               134
+                                                                DDDDD           DDDD                                                 135
+                                                                   DDDDDDDDDDDDDDDD                                                  136
+                                                                       DDDDDDDD                                                      137
+                                                                                                                                     138
+                                                                                                                                     139
+                                                                                                                                     140
+                                                                                                                                     141
+                                                                                                                                     142
+                                                                                                                                     143
+                                                                                                                                     144
+                                                                                                                                     145
+                                                                                                                                     146
+                                                                                                                                     147
+                                                                                                                                     148
+                                                                                                                                     149
+                                                                                                                                     150
+                                                                                                                                     151
+                                                                                                                                     152
+                                                                                                                                     153
+                                                                                                                                     154
+                                                                                                                                     155
+                                                                                                                                     156
+                                                                                                                                     157
+                                                                                                                                     158
+                                                                                                                                     159
+                                                                                                                                     160
+                                                                                                                                     161
+                                                                                                                                     162
+                                                                                                                                     163
+                                                                                                                                     164
+                                                                                                                                     165
+                                                                                                                                     166
+                                                                                                                                     167
+                                                                                                                                     168
+                                                                                                                                     169
+                                                                                                                                     170
+                                                                                                                                     171
+                                                                                                                                     172
+                                                                                                                                     173
+                                                                                                                                     174
+                                                                                                                                     175
+                                                                                                                                     176
+                                                                                                                                     177
+                                                                                                                                     178
+                                                                                                                                     179
+                                                                                                                                     180
+                                                                                                                                     181
+                                                                                                                                     182
+                                                                                                                                     183
+                                                                                                                                     184
+                                                                                                                                     185
+                                                                                                                                     186
+                                                                                                                                     187
+                                                                                                                                     188
+                                                                                                                                     189
+                                                                                                                                     190
+                                                                                                                                     191
+                                                                                                                                     192
+                                                                                                                                     193
+                                                                                                                                     194
+                                                                                                                                     195
+                                                                                                                                     196
+                                                                                                                                     197
+                                                                                                                                     198
+                                                                                                                                     199
+                                                                                                                                     200
+                                                                                                                                     201
+                                                                                                                                     202
+                                                                                                                                     203
+                                                                                                                                     204
+                                                                                                                                     205
+                                                                                                                                     206
+                                                                                                                                     207
+                                                                                                                                     208
+                                                                                                                                     209
+                                                                                                                                     210
+                                                                                                                                     211
+                                                                                                                                     212
+                                                                                                                                     213
+                                                                                                                                     214
+                                                                                                                                     215
+                                                                                                                                     216
+                                                                                                                                     217
+                                                                                                                                     218
+                                                                                                                                     219
+Is this picture ok?>>Press Enter to continue...                                                                                                                                    ; PCT: 0.45454545454545453% ; Time Remaining: 54.8479528427124
+                                                                                                                                    ; PCT: 0.9090909090909091% ; Time Remaining: 85.51547694206239
+                                                                                                                                    ; PCT: 1.3636363636363635% ; Time Remaining: 77.7925520737966
+                                                                                                                                    ; PCT: 1.8181818181818181% ; Time Remaining: 90.7284107208252
+                                                                                                      D                             ; PCT: 2.272727272727273% ; Time Remaining: 269.4921011924743
+                                                                                                      DDD                           ; PCT: 2.727272727272727% ; Time Remaining: 284.9109937349955
+                                                                                                      DDD DD                        ; PCT: 3.1818181818181817% ; Time Remaining: 323.4598457132067
+                                                                                                     DDDDDDDDD                      ; PCT: 3.6363636363636362% ; Time Remaining: 404.90077328681946
+                                                                                                     DD  DDDDD                      ; PCT: 4.090909090909091% ; Time Remaining: 448.19533936182654
+                                                                                                     DD  DDD DD                     ; PCT: 4.545454545454546% ; Time Remaining: 487.3429248332977
+                                                                                                    DD   DD  DDD                    ; PCT: 5.0% ; Time Remaining: 523.7244236469269
+                                                                                                    DD    DD  DD                    ; PCT: 5.454545454545454% ; Time Remaining: 539.2805512746176
+                                                                                                   DD     DD  DD                    ; PCT: 5.909090909090909% ; Time Remaining: 561.1056517454294
+                                                                                                   DD     DD   D                    ; PCT: 6.363636363636363% ; Time Remaining: 570.3423533439637
+                                                                                                  DD      DD   DD                   ; PCT: 6.818181818181818% ; Time Remaining: 581.4304490884145
+                                                                                                  DD      DDD  DD                   ; PCT: 7.2727272727272725% ; Time Remaining: 602.2376307249069
+                                                                                                 DD      DDDD  DD                   ; PCT: 7.7272727272727275% ; Time Remaining: 619.7016531860127
+                                                                                                 DD      DDD   DD                   ; PCT: 8.181818181818182% ; Time Remaining: 632.7197343243494
+                                                                                                 DD      D D  DDD                   ; PCT: 8.636363636363637% ; Time Remaining: 643.1081529416535
+                                                                                                DD       DDDD DDD                   ; PCT: 9.090909090909092% ; Time Remaining: 660.7069182395934
+                                                                                                DD      D  D  DDD                   ; PCT: 9.545454545454545% ; Time Remaining: 668.3654086703347
+                                                                                               DD       D DD  DDD                   ; PCT: 10.0% ; Time Remaining: 680.2057750225067
+                                                                                               DD      DD DD DDDD                   ; PCT: 10.454545454545455% ; Time Remaining: 698.3155858309373
+                                                                                               DD      D  DD D D                    ; PCT: 10.909090909090908% ; Time Remaining: 704.6209148963294
+                                                                                              DD      DD DD D DD                    ; PCT: 11.363636363636363% ; Time Remaining: 714.8562968730927
+                                                                                              DD      D  DD   DD                    ; PCT: 11.818181818181818% ; Time Remaining: 719.2435984428113
+                                                                                             DD       D DD  DDD                     ; PCT: 12.272727272727273% ; Time Remaining: 724.4953100063182
+                                                                                             DD      D  DD D DD      DDDD           ; PCT: 12.727272727272727% ; Time Remaining: 742.7670985630581
+                                                                                             DD      D  DD D DD    DDDDDD           ; PCT: 13.181818181818182% ; Time Remaining: 766.3822282758252
+                                                                                            DD       D DD DDDDD  DDDDD DD           ; PCT: 13.636363636363637% ; Time Remaining: 798.24396665891
+                                                                                            DD       D DD D DD  DDD    DD           ; PCT: 14.090909090909092% ; Time Remaining: 816.2087093168689
+                                                                                           DD       D  DD D DD DDD     DD           ; PCT: 14.545454545454545% ; Time Remaining: 833.5859994292259
+                                                                                           DD      DD DD DDDDDDD       DD           ; PCT: 15.0% ; Time Remaining: 851.9695886770884
+                                                                                           DD      D  DD D DDD         DD           ; PCT: 15.454545454545455% ; Time Remaining: 863.747316346449
+                                                                                          DD       D DDD DDDD          DD           ; PCT: 15.909090909090908% ; Time Remaining: 873.2090284143177

@@ -1,0 +1,50 @@
+#slider {
+    width: 468px;
+    margin: 0 auto;
+    position: relative;
+	float:right;
+	margin:22px 22px 0 0;
+}
+
+.scroll {
+    height: 328px;
+    width: 468px;
+    overflow: auto;
+    overflow-x: hidden;
+    position: relative;
+    clear: left;
+	z-index:9997;
+}
+
+.scrollContainer div.panel {
+    padding: 20px;
+    height: 328px;
+    width: 468px;
+}
+
+.scrollButtons {
+	position: absolute;
+	top: 100px;
+	cursor: pointer;
+	z-index:9999;
+	height:61px;
+	width:61px;
+}
+
+.scrollButtons.left {
+	z-index:9999;
+	left: -80px;
+}
+
+.scrollButtons.right {
+	z-index:9999;
+    right: -80px;
+}
+
+.hide {
+    display: none;
+}
+
+.panel { z-index:9999; }
+
+.slider-img { margin:-21px 0 0 -20px; }

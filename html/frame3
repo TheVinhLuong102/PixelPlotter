@@ -1,0 +1,7 @@
+
+<iframe  id="myframe" width="90%" height="100000px" src="log2.txt" style="border:none;"></iframe>
+<script>
+setTimeout(function(){
+   window.location.reload(1);
+}, 1000);
+</script>
