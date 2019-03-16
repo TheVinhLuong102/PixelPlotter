@@ -1,8 +1,0 @@
-cd /mnt/mmcblk0/home/
-rm lock/*
-rm lockcolor2/*
-#python /mnt/mmcblk0/home/printer3.py 
-python sendcolorp2.py &
-sleep 1
-python sendp2.py 
-echo hi >> /mnt/mmcblk0/www/log.txt
