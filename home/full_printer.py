@@ -5,7 +5,7 @@ import glob
 import printer
 sys.stdout.buffer.write(chr(9986).encode('utf8'))
 
-print("Click on each button to control the printer(s).\nOnce you click on a button, be patient. The command will take a moment. \nYou will be notified once finished (~10 seconds).")
+print("Welcome to Pixel Plotter. To print, use the web interface by connecting via USB or Bluetooth and opening a web browser to http://192.168.0.1/.")
 print("Images to print:")
 l = 0
 
