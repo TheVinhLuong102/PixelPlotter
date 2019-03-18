@@ -18,7 +18,8 @@ from termcolor import colored
 vert_move = 15;
 horiz_move = 15;
 #res = (horiz_deg/horiz_move);
-
+false = 0
+true = 1
 #function to ensure the motor has stopped before moving on
 xxx = 0
 def waitformotor(motor):
@@ -103,21 +104,21 @@ def printer(filename):
     g_array = [[255]*width]*height
     b_array = [[255]*width]*height
     bl_array = [[255]*width]*height
-    4col = false
+    e4col = false
     while h != height:
             while w != -1:
                     array.append(img.getpixel((w, h))) #get rgba black or white of each pixel and write to full array
                     r,g,b,a = img.getpixel((w, h)) #get rgba of each pixel
                     #check if red, green, or blue is greatest in rgb values --- check if black or white also --> then append array differently for each switch case
                     if r > g and r > b :
-                        4col = true
+                        e4col = true
                         r_array[h][w] = 0
                         g_array[h][w] = 255
                         b_array[h][w] = 255
                         bl_array[h][w] = 255
                         print("R", end="")
                     elif g > r and g > b :
-                        4col = true
+                        e4col = true
                         g_array[h][w] = 0
                         r_array[h][w] = 255
                         b_array[h][w] = 255
@@ -187,7 +188,7 @@ def printer(filename):
     #reset paper location
     resetMotors()
 
-    if 4col == true:
+    if e4col == true:
         x = input('Ready to print red/green? Press enter to continue...') #wait for dialogue to be answered then start printing
 
         initial = time.time()
