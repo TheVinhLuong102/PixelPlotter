@@ -100,51 +100,59 @@ def printer(filename):
 
     print(img.getpixel((w,h)))
 
-    r_array = [[255]*width]*height
-    g_array = [[255]*width]*height
-    b_array = [[255]*width]*height
-    bl_array = [[255]*width]*height
+#    r_array = [[255]*width]*height
+#    g_array = [[255]*width]*height
+#    b_array = [[255]*width]*height
+#    bl_array = [[255]*width]*height
+    r_array = []
+    g_array = []
+    b_array = []
+    bl_array = []
     e4col = false
     while h != height:
-            while w != -1:
+            r_array.append([255]*width)
+            g_array.append([255]*width)
+            b_array.append([255]*width)
+            bl_array.append([255]*width)
+            while w < width:
                     array.append(img.getpixel((w, h))) #get rgba black or white of each pixel and write to full array
                     r,g,b,a = img.getpixel((w, h)) #get rgba of each pixel
                     #check if red, green, or blue is greatest in rgb values --- check if black or white also --> then append array differently for each switch case
                     if r > g and r > b :
                         e4col = true
                         r_array[h][w] = 0
-                        g_array[h][w] = 255
-                        b_array[h][w] = 255
-                        bl_array[h][w] = 255
+#                        g_array[h][w] = 255
+#                        b_array[h][w] = 255
+#                        bl_array[h][w] = 255
                         print("R", end="")
                     elif g > r and g > b :
                         e4col = true
                         g_array[h][w] = 0
-                        r_array[h][w] = 255
-                        b_array[h][w] = 255
-                        bl_array[h][w] = 255
+#                        r_array[h][w] = 255
+#                        b_array[h][w] = 255
+#                        bl_array[h][w] = 255
                         print("G", end="")
                     elif b > r and b > g :
                         b_array[h][w] = 0
-                        g_array[h][w] = 255
-                        r_array[h][w] = 255
-                        bl_array[h][w] = 255
+#                        g_array[h][w] = 255
+#                        r_array[h][w] = 255
+#                        bl_array[h][w] = 255
                         print("B", end="")
                     elif b < 50 and r < 50 and g < 50 :
-                        b_array[h][w] = 255
-                        g_array[h][w] = 255
-                        r_array[h][w] = 255
+#                        b_array[h][w] = 255
+#                        g_array[h][w] = 255
+#                        r_array[h][w] = 255
                         bl_array[h][w] = 0
                         print("D", end="")
                     else:
-                        b_array[h][w] = 255
-                        g_array[h][w] = 255
-                        r_array[h][w] = 255
-                        bl_array[h][w] = 255
+#                        b_array[h][w] = 255
+#                        g_array[h][w] = 255
+#                        r_array[h][w] = 255
+#                        bl_array[h][w] = 255
                         print(" ", end="")
-                    w = w-1 #move to next pixel -- use -1 to flip image -> make images not backward when printed
+                    w = w+1 #move to next pixel -- use -1 to flip image -> make images not backward when printed
             print(" "+str(h))
-            w = width-1 #reset width counter
+            w = 0 #reset width counter
             h = h+1 #move to next row
 
 
@@ -156,8 +164,8 @@ def printer(filename):
     xd = 0
     yd = 0
     xda = 0 
-    while yd != height:
-        while xd != width:
+    while yd < height:
+        while xd != 0:
             if bl_array[yd][xd] == 0: #is pixel black?
                 print("D", end="") #print block if black pixel
                 head.run_to_abs_pos(position_sp=horiz_move*xd, speed_sp=400, ramp_down_sp=500)
@@ -174,12 +182,12 @@ def printer(filename):
             else:
                 print(" ", end="")
                 #move pen left
-            xd = xd + 1
+            xd = xd - 1
             xda = xda + 1
 
         print("; PCT: "+str(int(100*xda/(width*height)))+"% ; Time Remaining: "+str(int((100-100*xda/(width*height))*(time.time()-initial)/(100*xda/(width*height)))))
         yd = yd + 1
-        xd = 0
+        xd = width-1
         # move paper forward
         paper.run_to_abs_pos(position_sp=vert_move*(yd), speed_sp=250,ramp_down_sp=500)
         # reset pen location
@@ -196,8 +204,8 @@ def printer(filename):
         xd = 0
         yd = 0
         xda = 0 
-        while yd != height:
-            while xd != width:
+        while yd < height:
+            while xd != 0:
                 if r_array[yd][xd] == 0: #is pixel black?
                     print("R", end="") #print block if black pixel
                     head.run_to_abs_pos(position_sp=horiz_move*xd, speed_sp=400, ramp_down_sp=500)
@@ -214,12 +222,12 @@ def printer(filename):
                 else:
                     print(" ", end="")
                     #move pen left
-                xd = xd + 1
+                xd = xd - 1
                 xda = xda + 1
 
             print("; PCT: "+str(int(100*xda/(width*height)))+"% ; Time Remaining: "+str(int(((100-100*xda/(width*height))*(time.time()-initial)/(100*xda/(width*height)))))+"s")
             yd = yd + 1
-            xd = 0
+            xd = width - 1
             # move paper forward
             paper.run_to_abs_pos(position_sp=vert_move*(yd), speed_sp=250,ramp_down_sp=500)
             # reset pen location
