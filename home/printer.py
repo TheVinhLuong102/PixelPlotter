@@ -161,7 +161,7 @@ def printer(filename):
 
     initial = time.time()
     
-    xd = 0
+    xd = width-1
     yd = 0
     xda = 0 
     while yd < height:
@@ -201,7 +201,7 @@ def printer(filename):
 
         initial = time.time()
     
-        xd = 0
+        xd = width-1
         yd = 0
         xda = 0 
         while yd < height:
