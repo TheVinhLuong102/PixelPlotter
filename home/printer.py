@@ -120,7 +120,7 @@ def processPic(img,width,height):
             print(" "+str(h))
             w = width-1 #reset width counter
             h = h+1 #move to next row
-    return (r_array,g_array,b_array,bl_array,e4color,lastRow)
+    return (r_array,g_array,b_array,bl_array,e4col,lastRow)
 
 
 def runPrinter(array1,array2,width,height):
@@ -172,7 +172,7 @@ def printer(filename):
 
     print(width," x ",height)
 
-    r_array, g_array, b_array, bl_array, e4color, lastRow = processPic(img, width, height)
+    r_array, g_array, b_array, bl_array, e4col, lastRow = processPic(img, width, height)
 
     x = input('Is this picture ok? Press enter to print black/blue...') #wait for dialogue to be answered then start printing
 
