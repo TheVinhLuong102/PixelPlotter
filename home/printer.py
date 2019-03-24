@@ -87,6 +87,7 @@ def processPic(img,width,height):
     e4col = false
     lastRow = 0
     w = width-1
+    h = 0
     while h != height:
             r_array.append([255]*width)
             g_array.append([255]*width)
