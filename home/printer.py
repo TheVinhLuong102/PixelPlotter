@@ -62,18 +62,18 @@ print("Pixel Plotter v3.1 code v4.0")
 def resetMotors():
     paper.run_to_abs_pos(position_sp=0, speed_sp=1000)
     head.run_to_abs_pos(position_sp=0, speed_sp=1000)
-    pen1.run_to_abs_pos(position_sp=0, speed_sp=1000)
-    pen2.run_to_abs_pos(position_sp=0, speed_sp=1000)
+#    pen1.run_to_abs_pos(position_sp=0, speed_sp=1000)
+#    pen2.run_to_abs_pos(position_sp=0, speed_sp=1000)
     waitformotor(paper)
     waitformotor(head)
-    waitformotor(pen1)
-    waitformotor(pen2)
+#    waitformotor(pen1)
+#    waitformotor(pen2)
 
 #make a function to make a dot on the page
 def makedot(pen,dir):
-    pen.run_to_rel_pos(speed_sp=400*dir, position_sp=54*dir)
+    pen.run_to_abs_pos(speed_sp=400*dir, position_sp=55*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
-    pen.run_to_rel_pos(speed_sp=-400*dir, position_sp=-54*dir)
+    pen.run_to_abs_pos(speed_sp=-400*dir, position_sp=-54*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
 
 #resize and flip image
@@ -166,8 +166,9 @@ def runPrinter(array1,array2,width,height):
 
 
 def printer(filename):
-    img2 = Image.open(filename) #open image
-    img=img2.convert("RGBA")
+    img1 = Image.open(filename) #open image
+    img2=img1.convert("RGBA")
+    img = img2.transpose(Image.FLIP_LEFT_RIGHT)
     width, height = img.size # get image size
 
     print(width," x ",height)
