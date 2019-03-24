@@ -131,14 +131,14 @@ def runPrinter(array1,array2,width,height):
     xda = 0 
     while yd < height:
         while xd < width:
-            if array1[yd][width-xd] == 0: #is pixel black?
+            if array1[yd][width-xd-1] == 0: #is pixel black?
                 print("D", end="") #print block if black pixel
                 head.run_to_abs_pos(position_sp=horiz_move*xd, speed_sp=400, ramp_down_sp=500)
                 waitformotor(head)
                 # lower and raise pen
                 makedot(pen1,1)
                 # move pen left	
-            elif array2[yd][width-xd] == 0:
+            elif array2[yd][width-xd-1] == 0:
                 print("B", end="") #print block if red pixel
                 #head.run_to_abs_pos(position_sp=(horiz_move*xd), speed_sp=400, ramp_down_sp=500)
                 #waitformotor(head)
@@ -147,7 +147,7 @@ def runPrinter(array1,array2,width,height):
             else:
                 print(" ", end="")
                 #move pen left
-            if array2[yd][min([width-0,width-(xd-25)])] == 0:
+            if array2[yd][min([width-0-1,width-(xd-25)-1])] == 0:
                 #print("B", end="") #print block if red pixel
                 head.run_to_abs_pos(position_sp=(horiz_move*xd), speed_sp=400, ramp_down_sp=500)
                 waitformotor(head)
