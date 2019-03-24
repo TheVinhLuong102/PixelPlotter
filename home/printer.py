@@ -17,12 +17,16 @@ from termcolor import colored
 # paper resolution
 vert_move = 15;
 horiz_move = 15;
-#res = (horiz_deg/horiz_move);
+
+# Python2 compatibility variables
 false = 0
 true = 1
+
 #function to ensure the motor has stopped before moving on
-xxx = 0
+
+
 def waitformotor(motor):
+    xxx = 0
     while motor.state != []:
         xxx = 0
 # define motors and use brake mode
@@ -51,7 +55,8 @@ waitformotor(pen1)
 waitformotor(pen2)
 pen1.reset()
 pen2.reset()
-print("Init printer")
+print("Init printer motors")
+print("Pixel Plotter v3.1 code v4.0")
 
 
 def resetMotors():
@@ -74,174 +79,108 @@ def makedot(pen,dir):
 #resize and flip image
 #filename = sys.argv[1]
 
-def printer(filename):
-    w = 0
-    h = 0
-    l = 0
-    img2 = Image.open(filename) #open image
-    img=img2.convert("RGBA")
-    width, height = img.size # get image size
-
-    #define variables
-    array = []
-    w = width-1 #define starting width counter
-    print(width," x ",height)
-    r_array=[]
-    g_array = []
-    b_array = []
-    bl_array = []
-
-    #different colors: (in rgba -- remove last number in set to convert to rgb)
-    #red = (255,0,0,0) eg. in rgb -- (255,0,0)
-    #green = (0,255,0,0)
-    #blue = (0,0,255,0)
-    #black = (0,0,0,0)
-    #white = (255,255,255,0)
-
-    print(img.getpixel((w,h)))
-
-#    r_array = [[255]*width]*height
-#    g_array = [[255]*width]*height
-#    b_array = [[255]*width]*height
-#    bl_array = [[255]*width]*height
+def processPic(img,width,height):
     r_array = []
     g_array = []
     b_array = []
     bl_array = []
     e4col = false
+    lastRow = 0
+    w = width-1
     while h != height:
             r_array.append([255]*width)
             g_array.append([255]*width)
             b_array.append([255]*width)
             bl_array.append([255]*width)
-            while w < width:
-                    array.append(img.getpixel((w, h))) #get rgba black or white of each pixel and write to full array
+            while w >= 0:
                     r,g,b,a = img.getpixel((w, h)) #get rgba of each pixel
                     #check if red, green, or blue is greatest in rgb values --- check if black or white also --> then append array differently for each switch case
                     if r > g and r > b :
                         e4col = true
                         r_array[h][w] = 0
-#                        g_array[h][w] = 255
-#                        b_array[h][w] = 255
-#                        bl_array[h][w] = 255
+                        lastRow = h
                         print("R", end="")
                     elif g > r and g > b :
                         e4col = true
                         g_array[h][w] = 0
-#                        r_array[h][w] = 255
-#                        b_array[h][w] = 255
-#                        bl_array[h][w] = 255
+                        lastRow = h
                         print("G", end="")
                     elif b > r and b > g :
                         b_array[h][w] = 0
-#                        g_array[h][w] = 255
-#                        r_array[h][w] = 255
-#                        bl_array[h][w] = 255
+                        lastRow = h
                         print("B", end="")
                     elif b < 50 and r < 50 and g < 50 :
-#                        b_array[h][w] = 255
-#                        g_array[h][w] = 255
-#                        r_array[h][w] = 255
                         bl_array[h][w] = 0
+                        lastRow = h
                         print("D", end="")
                     else:
-#                        b_array[h][w] = 255
-#                        g_array[h][w] = 255
-#                        r_array[h][w] = 255
-#                        bl_array[h][w] = 255
                         print(" ", end="")
-                    w = w+1 #move to next pixel -- use -1 to flip image -> make images not backward when printed
+                    w = w-1 #move to next pixel -- use -1 to flip image -> make images not backward when printed
             print(" "+str(h))
-            w = 0 #reset width counter
+            w = width-1 #reset width counter
             h = h+1 #move to next row
+    return (r_array,g_array,b_array,bl_array,e4color,lastRow)
 
 
-
-    x = input('Is this picture ok? Press enter to continue...') #wait for dialogue to be answered then start printing
-
+def runPrinter(array1,array2,width,height):
     initial = time.time()
     
-    xd = width-1
+    xd = 0
     yd = 0
     xda = 0 
     while yd < height:
-        while xd != 0:
-            if bl_array[yd][xd] == 0: #is pixel black?
+        while xd < width:
+            if array1[yd][xd] == 0: #is pixel black?
                 print("D", end="") #print block if black pixel
                 head.run_to_abs_pos(position_sp=horiz_move*xd, speed_sp=400, ramp_down_sp=500)
                 waitformotor(head)
                 # lower and raise pen
                 makedot(pen1,-1)
                 # move pen left	
-            elif b_array[yd][max([0,xd-21])] == 0:
+            elif array2[yd][xd] == 0:
+                print("B", end="") #print block if red pixel
+                #head.run_to_abs_pos(position_sp=(horiz_move*xd), speed_sp=400, ramp_down_sp=500)
+                #waitformotor(head)
+                # lower and raise pen
+                #makedot(pen2,1)
+            else:
+                print(" ", end="")
+                #move pen left
+            if array2[yd][max([0,xd-21])] == 0:
                 print("B", end="") #print block if red pixel
                 head.run_to_abs_pos(position_sp=(horiz_move*xd), speed_sp=400, ramp_down_sp=500)
                 waitformotor(head)
                 # lower and raise pen
                 makedot(pen2,1)
-            else:
-                print(" ", end="")
-                #move pen left
-            xd = xd - 1
+            xd = xd + 1
             xda = xda + 1
 
-        print("; PCT: "+str(int(100*xda/(width*height)))+"% ; Time Remaining: "+str(int((100-100*xda/(width*height))*(time.time()-initial)/(100*xda/(width*height)))))
+        print(" PCT: "+str(int(100*xda/(width*height)))+"% ; Time Remaining: "+str(int((100-100*xda/(width*height))*(time.time()-initial)/(100*xda/(width*height))))+"s")
         yd = yd + 1
-        xd = width-1
+        xd = 0
         # move paper forward
         paper.run_to_abs_pos(position_sp=vert_move*(yd), speed_sp=250,ramp_down_sp=500)
         # reset pen location
         waitformotor(paper)
 
-    #reset paper location
+
+def printer(filename):
+    img2 = Image.open(filename) #open image
+    img=img2.convert("RGBA")
+    width, height = img.size # get image size
+
+    print(width," x ",height)
+
+    r_array, g_array, b_array, bl_array, e4color, lastRow = processPic(img, width, height)
+
+    x = input('Is this picture ok? Press enter to print black/blue...') #wait for dialogue to be answered then start printing
+
+    runPrinter(bl_array, b_array, width, lastRow+1)
     resetMotors()
+    
 
     if e4col == true:
         x = input('Ready to print red/green? Press enter to continue...') #wait for dialogue to be answered then start printing
-
-        initial = time.time()
-    
-        xd = width-1
-        yd = 0
-        xda = 0 
-        while yd < height:
-            while xd != 0:
-                if r_array[yd][xd] == 0: #is pixel black?
-                    print("R", end="") #print block if black pixel
-                    head.run_to_abs_pos(position_sp=horiz_move*xd, speed_sp=400, ramp_down_sp=500)
-                    waitformotor(head)
-                    # lower and raise pen
-                    makedot(pen1,-1)
-                    # move pen left	
-                elif g_array[yd][max([0,xd-21])] == 0:
-                    print("G", end="") #print block if red pixel
-                    head.run_to_abs_pos(position_sp=(horiz_move*xd), speed_sp=400, ramp_down_sp=500)
-                    waitformotor(head)
-                    # lower and raise pen
-                    makedot(pen2,1)
-                else:
-                    print(" ", end="")
-                    #move pen left
-                xd = xd - 1
-                xda = xda + 1
-
-            print("; PCT: "+str(int(100*xda/(width*height)))+"% ; Time Remaining: "+str(int(((100-100*xda/(width*height))*(time.time()-initial)/(100*xda/(width*height)))))+"s")
-            yd = yd + 1
-            xd = width - 1
-            # move paper forward
-            paper.run_to_abs_pos(position_sp=vert_move*(yd), speed_sp=250,ramp_down_sp=500)
-            # reset pen location
-            waitformotor(paper)
-
-        #reset paper location
+        runPrinter(r_array, g_array, width, height)
         resetMotors()
-        
     
-"""
-img2 = Image.open("ev3screen.jpg")
-raw = img2.tobytes()
-image = Image.frombytes(img2.mode, img2.size, raw)
-lcd = ev3.Screen()
-lcd._img.paste(image, (0, 0))
-lcd.update()
-"""
