@@ -147,7 +147,7 @@ def runPrinter(array1,array2,width,height):
             else:
                 print(" ", end="")
                 #move pen left
-            if array2[yd][max([0,xd-21])] == 0:
+            if array2[yd][max([0,xd-25])] == 0:
                 #print("B", end="") #print block if red pixel
                 head.run_to_abs_pos(position_sp=(horiz_move*xd), speed_sp=400, ramp_down_sp=500)
                 waitformotor(head)
