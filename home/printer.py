@@ -15,8 +15,8 @@ from termcolor import colored
 
 
 # paper resolution
-vert_move = 360;
-horiz_move = 15;
+vert_move = -360;
+horiz_move = 360;
 
 # Python2 compatibility variables
 false = 0
@@ -160,7 +160,7 @@ def runPrinter(array1,array2,width,height):
         yd = yd + 1
         xd = 0
         # move paper forward
-        paper.run_to_abs_pos(position_sp=vert_move*(yd), speed_sp=250,ramp_down_sp=500)
+        paper.run_to_abs_pos(position_sp=vert_move*(yd), speed_sp=-250,ramp_down_sp=500)
         # reset pen location
         waitformotor(paper)
 
