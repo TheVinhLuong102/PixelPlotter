@@ -26,14 +26,15 @@ while 1:
       print(added[x])
       name = added[x]
       if "pi" in name or "mono" in name:
-        os.system('convert /var/www/html/uploads/'+added[x]+' -rotate 90 -negate -flop -resize 132 -monochrome print.png')
+        os.system('convert /var/www/html/uploads/'+added[x]+' -rotate 90 -negate -flop -monochrome print.png')
+#        os.system('convert /var/www/html/uploads/'+added[x]+' -rotate 90 -negate -flop -resize 132 -monochrome print.png')
         save = added[x]
         added[x] = 'print.png'
         added[x] = added[x].replace (" ", "\ ")
       if "photo" in name:
         print("Processing...")
-#        os.system('convert "/var/www/html/uploads/'+added[x]+'" -negate -flop -resize 132 -monochrome print.png')
-        os.system('convert "/var/www/html/uploads/'+added[x]+'" -negate -flop -monochrome print.png')
+        os.system('convert "/var/www/html/uploads/'+added[x]+'" -negate -flop -resize 132 -monochrome print.png')
+#        os.system('convert "/var/www/html/uploads/'+added[x]+'" -negate -flop -monochrome print.png')
         save = added[x]
         added[x] = 'print.png'
         added[x] = added[x].replace (" ", "\ ")
