@@ -49,7 +49,7 @@ paper.reset()
 #move paper until color sensor recieves >50 reading
 
 #paper.speed_regulation_enabled=u'on'
-pen1.run_to_rel_pos(speed_sp=-400, position_sp=-53)
+pen1.run_to_rel_pos(speed_sp=400, position_sp=53)
 pen2.run_to_rel_pos(speed_sp=400, position_sp=53)
 waitformotor(pen1)
 waitformotor(pen2)
@@ -71,9 +71,9 @@ def resetMotors():
 
 #make a function to make a dot on the page
 def makedot(pen,dir):
-    pen.run_to_abs_pos(speed_sp=400*dir, position_sp=55*dir)
+    pen.run_to_abs_pos(speed_sp=-400*dir, position_sp=-x55*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
-    pen.run_to_abs_pos(speed_sp=-400*dir, position_sp=-54*dir)
+    pen.run_to_abs_pos(speed_sp=400*dir, position_sp=54*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
 
 #resize and flip image
