@@ -15,7 +15,7 @@ from termcolor import colored
 
 
 # paper resolution
-vert_move = 360;
+vert_move = 15;
 horiz_move = 15;
 
 # Python2 compatibility variables
