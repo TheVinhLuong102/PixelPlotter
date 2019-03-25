@@ -71,7 +71,7 @@ def resetMotors():
 
 #make a function to make a dot on the page
 def makedot(pen,dir):
-    pen.run_to_abs_pos(speed_sp=-400*dir, position_sp=-x55*dir)
+    pen.run_to_abs_pos(speed_sp=-400*dir, position_sp=-55*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
     pen.run_to_abs_pos(speed_sp=400*dir, position_sp=54*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
