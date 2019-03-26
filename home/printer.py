@@ -33,16 +33,16 @@ def waitformotor(motor):
 
 paper = ev3.MediumMotor('outA')
 pen1 = ev3.MediumMotor('outB')
-pen2 = ev3.MediumMotor('outD')
+#pen2 = ev3.MediumMotor('outD')
 head = ev3.MediumMotor('outC')
 
 pen1.stop_action = "brake"
-pen2.stop_action = "brake"
+#pen2.stop_action = "brake"
 head.stop_action = "brake"
 paper.stop_action = "brake"
 head.reset()
 pen1.reset()
-pen2.reset()
+#pen2.reset()
 paper.reset()
 
 
@@ -50,11 +50,11 @@ paper.reset()
 
 #paper.speed_regulation_enabled=u'on'
 pen1.run_to_rel_pos(speed_sp=400, position_sp=53)
-pen2.run_to_rel_pos(speed_sp=400, position_sp=53)
+#pen2.run_to_rel_pos(speed_sp=400, position_sp=53)
 waitformotor(pen1)
-waitformotor(pen2)
+#waitformotor(pen2)
 pen1.reset()
-pen2.reset()
+#pen2.reset()
 print("Init printer motors")
 print("Pixel Plotter v3.1 code v4.0")
 
@@ -71,9 +71,9 @@ def resetMotors():
 
 #make a function to make a dot on the page
 def makedot(pen,dir):
-    pen.run_to_abs_pos(speed_sp=-400*dir, position_sp=-55*dir)
+    pen.run_to_abs_pos(speed_sp=-800*dir, position_sp=-55*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
-    pen.run_to_abs_pos(speed_sp=400*dir, position_sp=54*dir)
+    pen.run_to_abs_pos(speed_sp=800*dir, position_sp=54*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
 
 #resize and flip image
@@ -138,31 +138,51 @@ def runPrinter(array1,array2,width,height):
                 # lower and raise pen
                 makedot(pen1,1)
                 # move pen left	
-            elif array2[yd][xd] == 0:
-                print("B", end="") #print block if red pixel
-                #head.run_to_abs_pos(position_sp=(horiz_move*xd), speed_sp=400, ramp_down_sp=500)
-                #waitformotor(head)
-                # lower and raise pen
-                #makedot(pen2,1)
             else:
                 print(" ", end="")
                 #move pen left
-            if array2[yd][max([0,(xd-18)])] == 0:
-                #print("B", end="") #print block if red pixel
-                head.run_to_abs_pos(position_sp=(horiz_move*xd), speed_sp=1000, ramp_down_sp=500)
-                waitformotor(head)
-                # lower and raise pen
-                makedot(pen2,-1)
             xd = xd + 1
             xda = xda + 1
 
+        yd = yd + 1
+        xd = width-1
+        
+        paper.run_to_abs_pos(position_sp=vert_move*(yd), speed_sp=-1000,ramp_down_sp=500)
+        # reset pen location
+        waitformotor(paper)
         print(" PCT: "+str(int(100*xda/(width*height)))+"% ; Time Remaining: "+str(int((100-100*xda/(width*height))*(time.time()-initial)/(100*xda/(width*height))))+"s")
+        
+        while xd >= 0:
+            if array1[yd][xd] == 0: #is pixel black?
+                head.run_to_abs_pos(position_sp=horiz_move*xd, speed_sp=1000, ramp_down_sp=500)
+                waitformotor(head)
+                # lower and raise pen
+                makedot(pen1,1)
+                # move pen left	
+            else:
+                xxx = 0
+                #move pen left
+            xd = xd - 1
+            xda = xda + 1
+
+        xd = 0
+
+        while xd < width:
+            if array1[yd][xd] == 0: #is pixel black?
+                print("D", end="") #print block if black pixel
+            else:
+                print(" ", end="")
+                #move pen left
+            xd = xd + 1
+
         yd = yd + 1
         xd = 0
+
         # move paper forward
         paper.run_to_abs_pos(position_sp=vert_move*(yd), speed_sp=-1000,ramp_down_sp=500)
         # reset pen location
         waitformotor(paper)
+        print(" PCT: "+str(int(100*xda/(width*height)))+"% ; Time Remaining: "+str(int((100-100*xda/(width*height))*(time.time()-initial)/(100*xda/(width*height))))+"s")
 
 
 def printer(filename):
