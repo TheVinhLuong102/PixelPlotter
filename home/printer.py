@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+#Plotter v4.0
 #import python packages
 
 #install --> (sudo) apt-get install python-pip --> (sudo) pip install pillow python-ev3dev
@@ -154,7 +155,7 @@ def runPrinter(array1,array2,width,height):
         
         while xd >= 0:
             if array1[yd][xd] == 0: #is pixel black?
-                head.run_to_abs_pos(position_sp=horiz_move*xd, speed_sp=1000, ramp_down_sp=500)
+                head.run_to_abs_pos(position_sp=(horiz_move*xd+10), speed_sp=1000, ramp_down_sp=500)
                 waitformotor(head)
                 # lower and raise pen
                 makedot(pen1,1)
