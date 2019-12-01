@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #import python packages
-
+#Pixel Plotter v2.0
 #install --> (sudo) apt-get install python-pip --> (sudo) pip install pillow python-ev3dev
 #running --> run (sudo) python pythonfilename.py imagefilename.png (jpg will work along with others types) -->
 #            you will be given a dialogue --> just type "" and return/enter to continue
@@ -38,8 +38,9 @@ def waitformotor(motor):
         xxx = 0
 # define motors and use brake mode
 
+col = ev3.ColorSensor()
 paper = ev3.MediumMotor('outA')
-pen1 = ev3.MediumMotor('outB')
+pen1 = ev3.LargeMotor('outB')
 pen2 = ""
 head = ev3.MediumMotor('outC')
 
@@ -58,8 +59,7 @@ pen1.run_to_rel_pos(speed_sp=-400, position_sp=-53)
 waitformotor(pen1)
 pen1.reset()
 print("Init printer motors")
-print("Pixel Plotter v3.1 code v4.0")
-
+print("Pixel Plotter v2.0 code v4.0")
 
 def resetMotors():
     paper.run_to_abs_pos(position_sp=0, speed_sp=1000)
@@ -73,9 +73,9 @@ def resetMotors():
 
 #make a function to make a dot on the page
 def makedot(pen,dir):
-    pen.run_to_abs_pos(speed_sp=400*dir, position_sp=55*dir)
+    pen.run_to_abs_pos(speed_sp=400*dir, position_sp=30*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
-    pen.run_to_abs_pos(speed_sp=-400*dir, position_sp=-54*dir)
+    pen.run_to_abs_pos(speed_sp=-400*dir, position_sp=-29*dir)
     waitformotor(pen) #double check if motor is stopped before raising pen
 
 #resize and flip image
@@ -157,6 +157,11 @@ def runPrinter(array1,width,height):
 
 
 def printer(filename):
+    while col.value() < 50:
+        paper.run_forever(duty_cycle_sp=40)
+    paper.stop()
+    paper.reset()
+        
     img1 = Image.open(filename) #open image
     img2=img1.convert("RGBA")
     img = img2.transpose(Image.FLIP_LEFT_RIGHT)
@@ -182,3 +187,4 @@ def printer(filename):
         x = input('Ready to print blue? Press enter to continue...') #wait for dialogue to be answered then start printing
         runPrinter(b_array, width, height)
         resetMotors()
+    
