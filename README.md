@@ -11,7 +11,7 @@ We also provide sample images.
 *   
         sudo apt-get update
         sudo apt-get upgrade
-        sudo apt-get install python3-pip git imagemagick apache2 php libapache2-mod-php
+        sudo apt-get install python3-pip git imagemagick apache2 php libapache2-mod-php shellinabox
         sudo pip3 install python-ev3dev termcolor pillow
 
 *   The ev3dev version should be the latest. To upgrade:
